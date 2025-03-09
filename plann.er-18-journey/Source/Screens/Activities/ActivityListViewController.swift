@@ -7,13 +7,25 @@
 import Foundation
 import UIKit
 
-class ActivitiesViewController: UIViewController {
+class ActivityListViewController: UIViewController {
     
-    let contentView = ActivitiesView()
+    let contentView:ActivityListView
+    let viewModel: ActivityListViewModel
+    
+    init(contentView: ActivityListView, viewModel: ActivityListViewModel) {
+        self.contentView = contentView
+        self.viewModel = viewModel
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     override func viewDidLoad() {
+        
         super.viewDidLoad()
-        view.backgroundColor = .systemBackground
+        view.backgroundColor = Colors.zinc950
     }
     
     private func setup() {

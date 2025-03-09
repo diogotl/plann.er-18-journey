@@ -36,6 +36,8 @@ extension Coordinator: HomeCoordinatorDelegate {
     }
     
     func navigateToActivityList() {
+        let activityListViewController = viewControllerFactory.makeActivityListViewController()
+        navigationController?.pushViewController(activityListViewController, animated: true)
     }
 }
 

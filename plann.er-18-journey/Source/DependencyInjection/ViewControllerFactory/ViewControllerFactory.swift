@@ -8,6 +8,16 @@
 import Foundation
 
 final class ViewControllerFactory: ViewControllerFactoryProtocol {
+    func makeActivityListViewController() -> ActivityListViewController {
+        let view = ActivityListView()
+        let viewModel = ActivityListViewModel()
+        let viewController = ActivityListViewController(
+            contentView: view,
+            viewModel: viewModel
+        )
+        return viewController
+    }
+    
     func makeInvitationViewController() -> InvitationViewController {
         let view = InvitationView()
         let viewModel = InvitationViewModel()

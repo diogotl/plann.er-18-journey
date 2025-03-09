@@ -9,4 +9,5 @@ import Foundation
 protocol ViewControllerFactoryProtocol: AnyObject {
     func makeHomeViewController(coordinatorDelegate: HomeCoordinatorDelegate) -> HomeViewController
     func makeInvitationViewController() -> InvitationViewController
+    func makeActivityListViewController() -> ActivityListViewController
 }

@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-class ActivitiesView: UIView {
+class ActivityListView: UIView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -29,7 +29,7 @@ class ActivitiesView: UIView {
     let titleLabel: UILabel = {
        let label = UILabel()
         label.text = "Activities"
-        label.textColor = .black
+        label.textColor = .white
         label.font = UIFont.boldSystemFont(ofSize: 24)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label

@@ -159,6 +159,12 @@ class HomeView: UIView {
            let endDate = selectedEndDate {
             
             // Se todos os campos forem válidos, desabilita os campos de input e alterna a visibilidade dos botões
+            if locationInput.textColor == Colors.zinc400 {
+                print("entrou")
+                errorLabel.isHidden = true
+                delegate?.didTapContinueButton(with: location , startDate: startDate, endDate: endDate)
+            }
+            
             locationInput.isEnabled = false
             dateInput.isEnabled = false
             
@@ -170,6 +176,8 @@ class HomeView: UIView {
             dateInput.textColor = Colors.zinc400
             
             divider.isHidden = false
+            
+           
             
         } else {
             errorLabel.text = "Preenche todos os campos"

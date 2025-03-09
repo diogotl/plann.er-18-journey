@@ -20,8 +20,12 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     
         coordinatorController = Coordinator()
         
-        let rootViewController = coordinatorController?.start()
-        
+        //let rootViewController = coordinatorController?.start()
+        let rootViewController = ActivityListViewController(
+            contentView: ActivityListView(),
+            viewModel: ActivityListViewModel()
+        )
+    
         window.rootViewController = rootViewController
         self.window = window
         window.makeKeyAndVisible()
