@@ -72,6 +72,7 @@ func updateInviteButtonText() {
 extension HomeViewController: HomeViewDelegate {
     func didTapContinueButton(with location: String, startDate: Date, endDate: Date) {
         
+        
         coordinatorDelegate?.navigateToActivityList()
     }
     
@@ -83,7 +84,7 @@ extension HomeViewController: HomeViewDelegate {
 
 extension HomeViewController: HomeCoordinatorDelegate {
     func navigateToActivityList() {
-        /// Navigate to the next screen
+        
     }
     
     func openLoginBottomSheet() {

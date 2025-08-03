@@ -12,6 +12,8 @@ class ActivityListViewController: UIViewController {
     let contentView:ActivityListView
     let viewModel: ActivityListViewModel
     
+    var list: [Activity] = []
+    
     init(contentView: ActivityListView, viewModel: ActivityListViewModel) {
         self.contentView = contentView
         self.viewModel = viewModel
@@ -25,6 +27,9 @@ class ActivityListViewController: UIViewController {
     override func viewDidLoad() {
         
         super.viewDidLoad()
+        list = viewModel.fetchActivities()
+        print("Fetched Activities: \(list.count)")
+        
         view.backgroundColor = Colors.zinc950
     }
     

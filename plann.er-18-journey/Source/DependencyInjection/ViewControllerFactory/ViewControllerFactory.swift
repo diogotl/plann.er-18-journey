@@ -6,11 +6,17 @@
 //
 
 import Foundation
+import CoreData
 
 final class ViewControllerFactory: ViewControllerFactoryProtocol {
     func makeActivityListViewController() -> ActivityListViewController {
+        
+        let managedObjectContext = CoreDataStack.shared.persistentContainer.viewContext
+        
         let view = ActivityListView()
-        let viewModel = ActivityListViewModel()
+        let viewModel = ActivityListViewModel(
+            context: managedObjectContext
+        )
         let viewController = ActivityListViewController(
             contentView: view,
             viewModel: viewModel
